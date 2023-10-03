@@ -1,4 +1,4 @@
 local Status = {
-  BladeBall = false;
+  BladeBall = true;
 }
 return Status
