@@ -6297,7 +6297,7 @@ function AutoFarmLevel()
 						end
 					end
 				else
-					if game:GetService("Workspace").Enemies:FindFirstChild(Name) then
+					if game:GetService("Workspace").Enemies:FindFirstChild(NameMon) then
 						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 							if _G.Settings.Main["Auto Farm Level"] and v.Name == NameMon and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 								if string.find(GetQuestTitle.Text, QuestName) then
@@ -6340,7 +6340,7 @@ function AutoFarmLevel()
 											FastAttack = true
 											EquipWeapon(_G.Settings.Configs["Select Weapon"])
 										end
-									until not game:GetService("Workspace").Enemies:FindFirstChild(Name) or not _G.Settings.Main["Auto Farm Level"] or not string.find(GetQuestTitle.Text, QuestName) or v.Humanoid.Health <= 0 or not v.Parent or GetQuest.Visible == false
+									until not game:GetService("Workspace").Enemies:FindFirstChild(NameMon) or not _G.Settings.Main["Auto Farm Level"] or not string.find(GetQuestTitle.Text, QuestName) or v.Humanoid.Health <= 0 or not v.Parent or GetQuest.Visible == false
 									FastAttack = false
 									StartMagnet = false
 								else
@@ -6400,7 +6400,7 @@ function AutoFarmLevel()
 					end
 				end
 			elseif GetQuest.Visible == true then
-				if game:GetService("Workspace").Enemies:FindFirstChild(Name) then
+				if game:GetService("Workspace").Enemies:FindFirstChild(NameMon) then
 					for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 						if _G.Settings.Main["Auto Farm Level"] and v.Name == NameMon and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 							if string.find(GetQuestTitle.Text, NameMon) then
@@ -6442,7 +6442,7 @@ function AutoFarmLevel()
 										end
 										game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Settings.Configs["Distance Auto Farm"],0)
 									end
-								until not game:GetService("Workspace").Enemies:FindFirstChild(Name) or not _G.Settings.Main["Auto Farm Level"] or not string.find(GetQuestTitle.Text, NameMon) or v.Humanoid.Health <= 0 or not v.Parent or GetQuest.Visible == false
+								until not game:GetService("Workspace").Enemies:FindFirstChild(NameMon) or not _G.Settings.Main["Auto Farm Level"] or not string.find(GetQuestTitle.Text, NameMon) or v.Humanoid.Health <= 0 or not v.Parent or GetQuest.Visible == false
 								StartMagnet = false
 								FastAttack = false
 							else
@@ -6502,7 +6502,7 @@ function AutoFarmLevel()
 				end
 			end
 		elseif GetQuest.Visible == true then
-			if game:GetService("Workspace").Enemies:FindFirstChild(Name) then
+			if game:GetService("Workspace").Enemies:FindFirstChild(NameMon) then
 				for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 					if _G.Settings.Main["Auto Farm Level"] and v.Name == NameMon and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 						if string.find(GetQuestTitle.Text, NameMon) then
@@ -6544,7 +6544,7 @@ function AutoFarmLevel()
 									end
 									game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Settings.Configs["Distance Auto Farm"],0)
 								end
-							until not game:GetService("Workspace").Enemies:FindFirstChild(Name) or not _G.Settings.Main["Auto Farm Level"] or not string.find(GetQuestTitle.Text, NameMon) or v.Humanoid.Health <= 0 or not v.Parent or GetQuest.Visible == false
+							until not game:GetService("Workspace").Enemies:FindFirstChild(NameMon) or not _G.Settings.Main["Auto Farm Level"] or not string.find(GetQuestTitle.Text, NameMon) or v.Humanoid.Health <= 0 or not v.Parent or GetQuest.Visible == false
 							StartMagnet = false
 							FastAttack = false
 						else
@@ -8706,9 +8706,9 @@ elseif World3 then
 				while wait() do
 					pcall(function()
 						if _G.Settings.Main["Auto Farm Bone"] then
-							if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton [Lv. 1975]") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie [Lv. 2000]") or game:GetService("Workspace").Enemies:FindFirstChild("Demonic Soul [Lv. 2025]") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy [Lv. 2050]") then
+							if game:GetService("Workspace").Enemies:FindFirstChild("Reborn Skeleton") or game:GetService("Workspace").Enemies:FindFirstChild("Living Zombie [Lv. 2000]") or game:GetService("Workspace").Enemies:FindFirstChild("Demonic Soul [Lv. 2025]") or game:GetService("Workspace").Enemies:FindFirstChild("Posessed Mummy [Lv. 2050]") then
 								for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-									if v.Name == "Reborn Skeleton [Lv. 1975]" or v.Name == "Living Zombie [Lv. 2000]" or v.Name == "Demonic Soul [Lv. 2025]" or v.Name == "Posessed Mummy [Lv. 2050]" then
+									if v.Name == "Reborn Skeleton" or v.Name == "Living Zombie" or v.Name == "Demonic Soul" or v.Name == "Posessed Mummy" then
 										if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 											repeat wait()
 												StartMagnet = true
@@ -12139,7 +12139,7 @@ task.spawn(function()
 end)
 
 function AutoFarmMasteryGun()
-	if game:GetService("Workspace").Enemies:FindFirstChild(Name) then
+	if game:GetService("Workspace").Enemies:FindFirstChild(NameMon) then
 		for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 			if _G.Settings.Mastery["Auto Farm Gun Mastery"] and v.Name == NameMon and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 				repeat wait()
@@ -12174,7 +12174,7 @@ function AutoFarmMasteryGun()
 							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 15, 0)
 						end
 					end
-				until not game:GetService("Workspace").Enemies:FindFirstChild(Name) or not _G.Settings.Mastery["Auto Farm Gun Mastery"] or v.Humanoid.Health <= 0 or not v.Parent
+				until not game:GetService("Workspace").Enemies:FindFirstChild(NameMon) or not _G.Settings.Mastery["Auto Farm Gun Mastery"] or v.Humanoid.Health <= 0 or not v.Parent
 				UseSkillMasteryGun = false
 				StartMagnet = false
 			end
@@ -12208,7 +12208,7 @@ function AutoFarmMasteryGun()
 end
 
 function AutoFarmMasteryDevilFruit()
-	if game:GetService("Workspace").Enemies:FindFirstChild(Name) then
+	if game:GetService("Workspace").Enemies:FindFirstChild(NameMon) then
 		for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 			if _G.Settings.Mastery["Auto Farm Fruit Mastery"] and v.Name == NameMon and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 				repeat wait()
@@ -12308,7 +12308,7 @@ function AutoFarmMasteryDevilFruit()
 							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0)
 						end
 					end
-				until not game:GetService("Workspace").Enemies:FindFirstChild(Name) or not _G.Settings.Mastery["Auto Farm Fruit Mastery"] or v.Humanoid.Health <= 0 or not v.Parent
+				until not game:GetService("Workspace").Enemies:FindFirstChild(NameMon) or not _G.Settings.Mastery["Auto Farm Fruit Mastery"] or v.Humanoid.Health <= 0 or not v.Parent
 				StartMagnet = false
 			end
 		end
@@ -12464,7 +12464,7 @@ function AutoFarmMasterySwordList()
 end
 
 local function inmyself(name)
-	return game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(name) or game:GetService("Players").LocalPlayer.Character:FindFirstChild(name);
+	return game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(NameMon) or game:GetService("Players").LocalPlayer.Character:FindFirstChild(NameMon);
 end
 
 SwordListFarmComplete = {};
