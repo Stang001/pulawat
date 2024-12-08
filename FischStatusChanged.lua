@@ -1,5 +1,5 @@
 local module = {
-  IsEnabled = false;
+  IsEnabled = true;
   string = "แมพพังแล้ว";
 };
 return module
